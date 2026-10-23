@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- ✏️ Titre de l'onglet -->
+<title>Rudolf von Lohtre — Wikipédia</title>
+<style>
+  /* ============ Couleurs (clair / sombre) ============ */
+  :root {
+    --bg:#fff; --fg:#202122; --link:#36c; --new:#d33; --muted:#54595d;
+    --bd:#a2a9b1; --bd2:#eaecf0; --sf:#f8f9fa; --sf2:#eaecf0;
+    --blue:#00209f; --blue2:#cedff2; --fs:16px; --maxw:1500px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg:#101418; --fg:#eaecf0; --link:#88a3e8; --new:#ff8d8d; --muted:#a2a9b1;
+      --bd:#54595d; --bd2:#2a2e33; --sf:#1a1e23; --sf2:#2a2e33; --blue2:#1b2b5a;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg:#101418; --fg:#eaecf0; --link:#88a3e8; --new:#ff8d8d; --muted:#a2a9b1;
+    --bd:#54595d; --bd2:#2a2e33; --sf:#1a1e23; --sf2:#2a2e33; --blue2:#1b2b5a;
+  }
+  @media (min-width: 1000px) { :root { --fs:15px; } }
+
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html { -webkit-text-size-adjust: 100%; font-size: var(--fs); scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--bg); color: var(--fg);
+    font-family: -apple-system, "Segoe UI", Roboto, Lato, Helvetica, Arial, sans-serif;
+    line-height: 1.65;
+  }
+  a { color: var(--link); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  a.new { color: var(--new); }
+  button { font: inherit; color: inherit; }
+  .ic { width: 22px; height: 22px; stroke: var(--muted); fill: none; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+  .wordmark { font-family: "Linux Libertine", Georgia, Times, serif; font-variant: small-caps; letter-spacing: .5px; line-height: 1; }
+  .globe { width: 32px; height: 32px; border-radius: 50%; border: 1.5px solid var(--fg); display: flex; align-items: center; justify-content: center; font-family: Georgia, serif; font-size: 18px; font-weight: bold; line-height: 1; flex: none; }
+
+  /* ============ En-têtes ============ */
+  .hdr-m { display: flex; align-items: center; justify-content: space-between; height: 52px; padding: 0 12px; background: var(--bg); border-bottom: 1px solid var(--bd2); position: sticky; top: 0; z-index: 20; }
+  .hdr-m .l, .hdr-m .r { display: flex; align-items: center; gap: 16px; }
+  .hdr-m .brand { display: flex; align-items: center; gap: 8px; }
+  .hdr-m .wordmark { font-size: 20px; }
+  .hdr-m .brand small { display: block; font-family: -apple-system, "Segoe UI", sans-serif; font-size: 9.5px; color: var(--muted); letter-spacing: 0; margin-top: 2px; font-variant: normal; }
+
+  .hdr-d { display: none; align-items: center; gap: 2rem; padding: 14px 3rem 14px 2.5rem; }
+  .hdr-d .brand { display: flex; align-items: center; gap: 10px; }
+  .hdr-d .burger { background: none; border: 0; padding: 4px; margin-right: 4px; cursor: pointer; }
+  .hdr-d .wordmark { font-size: 26px; }
+  .hdr-d .brand small { display: block; font-family: "Linux Libertine", Georgia, serif; font-size: 13.5px; color: var(--muted); margin-top: 2px; font-variant: normal; letter-spacing: .2px; }
+  .hdr-d .search { display: flex; flex: 1; max-width: 38rem; height: 40px; border: 1px solid var(--bd); }
+  .hdr-d .search .field { flex: 1; display: flex; align-items: center; gap: 8px; padding: 0 10px; color: var(--muted); }
+  .hdr-d .search .field .ic { width: 18px; height: 18px; }
+  .hdr-d .search button { border: 0; border-left: 1px solid var(--bd); background: var(--sf); font-weight: bold; padding: 0 14px; }
+  .hdr-d .acct { margin-left: auto; display: flex; gap: 12px; font-size: .95rem; }
+
+  /* ============ Mise en page générale ============ */
+  .layout { max-width: var(--maxw); margin: 0 auto; }
+  .toc-col, .app-col { display: none; }
+  .content { min-width: 0; padding: 0 16px; }
+  .content-in::after { content: ""; display: block; clear: both; }
+
+  /* Titre */
+  .titlebar { display: flex; justify-content: space-between; align-items: flex-end; }
+  h1.title { font-family: "Linux Libertine", Georgia, Times, serif; font-weight: normal; font-size: 1.85rem; line-height: 1.2; margin: 18px 0 8px; word-wrap: break-word; }
+  .langs, .tabs { display: none; }
+  .page-actions { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--bd2); border-bottom: 1px solid var(--bd2); margin: 0 -16px 14px; padding: 4px 16px; }
+  .page-actions .a { display: flex; flex-direction: column; align-items: center; gap: 2px; font-size: 11.5px; color: var(--muted); padding: 4px 6px; }
+  .page-actions .ic { width: 20px; height: 20px; }
+
+  /* Bandeaux */
+  .hatnote { font-style: italic; margin: 0 0 12px; padding-left: 1.8em; position: relative; font-size: .95rem; }
+  .hatnote::before { position: absolute; left: .1em; top: 0; font-style: normal; }
+  .hatnote.q::before { content: "★"; color: #fc3; }
+  .hatnote.h::before { content: "↩"; color: var(--link); font-weight: bold; }
+  .ambox { border: 1px solid var(--bd); border-left: 8px solid #36c; background: var(--sf); padding: 8px 12px; margin: 0 0 14px; font-size: .9rem; line-height: 1.5; }
+
+  /* Infobox */
+  .infobox { border: 1px solid var(--bd); background: var(--sf); margin: 0 0 16px; font-size: .9rem; line-height: 1.45; }
+  .infobox .ititle { text-align: center; font-weight: bold; padding: 8px 10px; background: var(--blue); color: #fff; font-size: 1.15em; }
+  .infobox .photo { margin: 10px auto 4px; width: 78%; aspect-ratio: 3 / 4; background: var(--sf2); border: 1px solid var(--bd); display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: .85em; text-align: center; padding: 8px; }
+  .infobox .photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .infobox .caption { text-align: center; padding: 0 10px 10px; }
+  .infobox table { width: 100%; border-collapse: collapse; }
+  .infobox th, .infobox td { padding: 5px 10px; vertical-align: top; text-align: left; }
+  .infobox tr + tr th, .infobox tr + tr td { border-top: 1px solid var(--bd2); }
+  .infobox th { width: 36%; font-weight: bold; }
+  .infobox th.band { width: auto; text-align: center; background: var(--blue); color: #fff; border-top: 1px solid var(--bd); }
+  .infobox td.subband { text-align: center; background: var(--blue2); }
+  .infobox td.dates { text-align: center; }
+  .infobox td.media { text-align: center; padding: 10px; }
+  .infobox .ph { margin: 0 auto 4px; background: var(--sf2); border: 1px solid var(--bd); color: var(--muted); display: flex; align-items: center; justify-content: center; font-size: .85em; }
+  .infobox .ph.sig { width: 70%; height: 60px; }
+  .infobox .ph.arms { width: 55%; aspect-ratio: 1 / 1.1; }
+  .infobox .ibfoot { display: flex; justify-content: space-between; align-items: center; padding: 3px 10px; border-top: 2px solid var(--link); font-size: .8em; color: var(--muted); }
+  .infobox .ibfoot .i { width: 14px; height: 14px; border-radius: 50%; background: var(--link); color: var(--bg); font-size: 10px; font-weight: bold; display: flex; align-items: center; justify-content: center; }
+
+  p { margin: 0 0 13px; }
+  a.listen { display: inline-flex; align-items: center; gap: 3px; white-space: nowrap; }
+  a.listen .ic { width: 15px; height: 15px; stroke: var(--link); }
+  a.listen.playing { font-weight: bold; }
+  sup.r { font-size: .72em; line-height: 0; vertical-align: super; }
+  blockquote { margin: 0 0 13px 1.4em; padding: 0; }
+  blockquote .src { display: block; font-size: .9em; }
+
+  /* Sections */
+  details.sec { border-bottom: 1px solid var(--bd); scroll-margin-top: 62px; }
+  details.sec > summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; padding: 14px 0 8px; }
+  details.sec > summary::-webkit-details-marker { display: none; }
+  details.sec > summary h2 { font-family: "Linux Libertine", Georgia, Times, serif; font-weight: normal; font-size: 1.45rem; line-height: 1.25; margin: 0; }
+  details.sec > summary h2 .edit { display: none; }
+  details.sec > summary::after { content: ""; width: 9px; height: 9px; flex: none; margin-left: 12px; border-right: 2px solid var(--muted); border-bottom: 2px solid var(--muted); transform: rotate(-135deg) translate(-2px, -2px); transition: transform .15s; }
+  details.sec:not([open]) > summary::after { transform: rotate(45deg); }
+  details.sec > .body { padding: 4px 0 10px; }
+  h3 { font-size: 1.2rem; font-weight: bold; margin: 18px 0 6px; line-height: 1.3; scroll-margin-top: 62px; }
+
+  /* Images */
+  figure.thumb { margin: 4px 0 16px; background: var(--sf); border: 1px solid var(--bd2); }
+  figure.thumb .img { width: 100%; aspect-ratio: 4 / 3; background: var(--sf2); display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: .85rem; }
+  figure.thumb img { width: 100%; display: block; }
+  figure.thumb figcaption { font-size: .85rem; line-height: 1.45; padding: 6px 10px 8px; }
+
+  /* Tableaux */
+  .tablewrap { overflow-x: auto; margin: 0 0 14px; }
+  table.wikitable { border-collapse: collapse; background: var(--sf); font-size: .92em; min-width: 100%; }
+  table.wikitable th, table.wikitable td { border: 1px solid var(--bd); padding: 5px 8px; }
+  table.wikitable th { background: var(--sf2); text-align: center; }
+
+  ul.list { margin: 0 0 13px; padding-left: 1.3em; }
+  ul.list li { margin-bottom: 3px; }
+  ol.refs { margin: 0 0 8px; padding-left: 1.6em; font-size: .9em; line-height: 1.5; }
+  ol.refs li { margin-bottom: 5px; }
+
+  .portal { display: flex; align-items: center; gap: 10px; border: 1px solid var(--bd); background: var(--sf); padding: 8px 12px; margin: 16px 0; font-size: .92em; }
+  .portal .p-ic { width: 26px; height: 26px; border-radius: 4px; background: var(--blue2); display: flex; align-items: center; justify-content: center; font-size: 15px; flex: none; }
+  details.navbox { border: 1px solid var(--bd); background: var(--sf); margin: 16px 0 14px; font-size: .9em; }
+  details.navbox > summary { list-style: none; padding: 8px 12px; font-weight: bold; text-align: center; background: var(--blue2); cursor: pointer; }
+  details.navbox > summary::-webkit-details-marker { display: none; }
+  details.navbox .nb { padding: 8px 12px; line-height: 1.7; text-align: center; }
+  .cats { background: var(--sf); border: 1px solid var(--bd); padding: 10px 14px; margin: 14px 0; font-size: .88rem; line-height: 1.7; }
+
+  footer { background: var(--sf); padding: 18px 16px 30px; font-size: .82rem; color: var(--muted); line-height: 1.6; margin-top: 24px; }
+  footer .in { max-width: var(--maxw); margin: 0 auto; }
+  footer p { margin: 0 0 10px; }
+  footer .links a { margin-right: 10px; white-space: nowrap; }
+  footer .logos { display: flex; gap: 14px; margin-top: 14px; font-size: 12px; }
+
+  /* ============ Version ordinateur ============ */
+  @media (min-width: 1000px) {
+    .hdr-m, .page-actions { display: none; }
+    .hdr-d { display: flex; }
+    .layout { display: grid; grid-template-columns: 15rem minmax(0, 1fr); gap: 0 2rem; padding: 0 2.5rem; }
+    body.toc-off .layout { grid-template-columns: minmax(0, 1fr); }
+    .toc-col { display: block; }
+    body.toc-off .toc-col { display: none; }
+    .content { padding: 0; }
+
+    .titlebar { border-bottom: 1px solid var(--bd); align-items: center; }
+    h1.title { margin: 4px 0 6px; font-size: 1.9rem; }
+    .langs { display: flex; align-items: center; gap: 6px; font-weight: bold; }
+    .langs .ic { stroke: var(--link); }
+    .tabs { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; padding: 6px 0 8px; font-size: .95rem; border-bottom: 1px solid var(--bd2); }
+    .tabs .grp { display: flex; gap: 16px; align-items: center; }
+    .tabs .on { color: var(--fg); }
+    .hatnote { font-size: 1.1rem; margin: 10px 0 14px; }
+
+    .infobox { float: right; width: 23em; margin: 4px 0 14px 1.6em; clear: right; }
+    figure.thumb { float: right; clear: right; width: min(22em, 45%); margin: 6px 0 14px 1.6em; }
+
+    details.sec { border-bottom: 0; scroll-margin-top: 16px; }
+    details.sec > summary { display: block; cursor: default; padding: 0; margin: 1.1em 0 .6em; overflow: hidden; border-bottom: 1px solid var(--bd); }
+    details.sec > summary::after { display: none; }
+    details.sec > summary h2 { font-size: 1.6rem; padding-bottom: 2px; }
+    details.sec > summary h2 .edit { display: inline; font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif; font-size: .8rem; font-weight: normal; color: var(--muted); margin-left: 1em; }
+    details.sec > .body { padding: 0; }
+    h3 { scroll-margin-top: 16px; margin-top: 16px; }
+    .cats { margin-top: 20px; }
+  }
+  @media (min-width: 1280px) {
+    .layout { grid-template-columns: 15rem minmax(0, 1fr) 15rem; }
+    body.toc-off .layout { grid-template-columns: minmax(0, 1fr) 15rem; }
+    .app-col { display: block; }
+  }
+
+  /* ============ Sommaire (colonne gauche, fixe) ============ */
+  .toc { position: sticky; top: 16px; max-height: calc(100vh - 32px); overflow-y: auto; padding: 8px 6px 16px 0; font-size: .93rem; }
+  .toc .hd, .appearance .hd { display: flex; align-items: center; gap: 10px; padding-bottom: 8px; border-bottom: 1px solid var(--bd2); margin-bottom: 8px; font-weight: bold; }
+  .toc .hd button, .appearance .hd button { font-size: .8rem; font-weight: normal; background: var(--sf2); border: 1px solid var(--bd2); padding: 1px 9px; cursor: pointer; }
+  .toc ul { list-style: none; margin: 0; padding: 0; }
+  .toc li { position: relative; padding-left: 18px; }
+  .toc li a { display: block; padding: 4px 0; line-height: 1.4; }
+  .toc li a.active { color: var(--fg); font-weight: bold; }
+  .toc li ul { display: none; padding-top: 0; }
+  .toc li.open > ul { display: block; }
+  .toc li.top a { font-weight: bold; }
+  .toc li.top a:not(.active) { color: var(--link); }
+  .toc li ul li { padding-left: 14px; }
+  .toc .tg { position: absolute; left: 0; top: 7px; width: 16px; height: 16px; padding: 0; border: 0; background: none; cursor: pointer; }
+  .toc .tg::before { content: ""; position: absolute; left: 4px; top: 4px; width: 5px; height: 5px; border-right: 1.5px solid var(--muted); border-bottom: 1.5px solid var(--muted); transform: rotate(-45deg); transition: transform .12s; }
+  .toc li.open > .tg::before { transform: rotate(45deg); }
+
+  /* ============ Apparence (colonne droite, fixe) ============ */
+  .appearance { position: sticky; top: 16px; font-size: .93rem; }
+  .appearance h4 { margin: 14px 0 4px; font-weight: normal; color: var(--muted); font-size: .93rem; padding-bottom: 4px; border-bottom: 1px solid var(--bd2); }
+  .appearance label { display: flex; align-items: center; gap: 10px; padding: 5px 0; cursor: pointer; }
+  .appearance input { accent-color: #36c; width: 17px; height: 17px; margin: 0; }
+
+  h3 .edit {
+  font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: .8rem;
+  font-weight: normal;
+  color: var(--muted);
+  margin-left: 1em;
+}
+@media (max-width: 999px) {
+  h3 .edit { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ================= EN-TÊTE MOBILE (ne pas toucher) ================= -->
+<div class="hdr-m">
+  <div class="l">
+    <svg class="ic" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    <div class="brand"><div class="globe">W</div><div><div class="wordmark">Wikipédia</div><small>L’encyclopédie libre</small></div></div>
+  </div>
+  <div class="r">
+    <svg class="ic" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+    <!-- ✏️ Bouton de profil : ouvre la page « page-profil.html » (même dossier) -->
+    <a href="page-profil.html" aria-label="Profil" style="display:flex"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></a>
+  </div>
+</div>
+
+<!-- ================= EN-TÊTE ORDINATEUR (ne pas toucher) ================= -->
+<header class="hdr-d">
+  <div class="brand">
+    <button class="burger" id="burger" aria-label="Menu principal"><svg class="ic" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    <div class="globe">W</div>
+    <div><div class="wordmark">Wikipédia</div><small>L’encyclopédie libre</small></div>
+  </div>
+  <div class="search">
+    <div class="field"><svg class="ic" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>Rechercher sur Wikipédia</div>
+    <button>Rechercher</button>
+  </div>
+  <div class="acct"><a href="#">Faire un don</a><a href="#">Créer un compte</a><a href="page-profil.html">Se connecter</a></div>
+</header>
+
+<div class="layout">
+
+  <!-- ============ SOMMAIRE (généré automatiquement à partir des titres de section) ============ -->
+  <div class="toc-col">
+    <nav class="toc" aria-label="Sommaire">
+      <div class="hd">Sommaire <button id="toc-hide">masquer</button></div>
+      <ul id="toc-list"></ul>
+    </nav>
+  </div>
+
+  <!-- ============ CONTENU ============ -->
+  <main class="content">
+    <div class="content-in" id="top">
+
+      <!-- ✏️ TITRE DE L'ARTICLE -->
+      <div class="titlebar">
+        <h1 class="title">Rudolf von Lohtre</h1>
+        <div class="langs"><svg class="ic" viewBox="0 0 24 24"><path d="M4 5h9M8.5 3v2M6 5c1 4 3 7 6 9M12 5c-1 4-3 7-7 9M13 21l4-10 4 10M14.5 17.5h5"/></svg><a href="#">163 langues</a></div>
+      </div>
+
+      <div class="tabs">
+        <div class="grp"><span class="on">Article</span><a href="#">Discussion</a></div>
+        <div class="grp"><span class="on">Lire</span><a href="#">Modifier</a><a href="#">Modifier le code</a><a href="#">Voir l’historique</a><span style="font-weight:bold">⋮</span></div>
+      </div>
+
+      <div class="page-actions">
+        <div class="a"><svg class="ic" viewBox="0 0 24 24"><path d="M4 5h9M8.5 3v2M6 5c1 4 3 7 6 9M12 5c-1 4-3 7-7 9M13 21l4-10 4 10M14.5 17.5h5"/></svg>Langue</div>
+        <div class="a"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Historique</div>
+        <div class="a"><svg class="ic" viewBox="0 0 24 24"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg>Suivre</div>
+        <div class="a"><svg class="ic" viewBox="0 0 24 24"><path d="M4 20l1-4L17 4l3 3L8 19z"/></svg>Modifier</div>
+      </div>
+
+      <!-- ✏️ BANDEAU « ARTICLE DE QUALITÉ » (facultatif : supprime la ligne si tu n'en veux pas) -->
+      <p class="hatnote q">Vous lisez un « <a href="#">article de qualité</a> » labellisé en 2012.</p>
+      <!-- ✏️ BANDEAU « HOMONYMES » (facultatif) -->
+      <p class="hatnote h">Pour les articles homonymes, voir <a href="#">Lohtre (homonymie)</a>.</p>
+      <!-- ✏️ BANDEAU D'AVERTISSEMENT (facultatif : supprime tout le bloc) -->
+      <div class="ambox">Cet article est une <a href="#">ébauche</a> concernant Rudolf von Lohtre. Vous pouvez partager vos connaissances en l’améliorant.</div>
+
+      <!-- ✏️ INFOBOX (à droite du texte sur ordinateur, pleine largeur sur mobile)
+           Modifie, ajoute ou supprime des lignes <tr>. Elle ne suit pas l'écran. -->
+      <div class="infobox">
+        <div class="ititle">Rudolf von Lohtre</div>
+        <div class="photo"><img src="photo_acceuil.png" alt=""></div>
+        <div class="caption">Von Lothre vers 1825, auteur inconnu.</div>
+        <table>
+          <tr><th colspan="2" class="band">Fonctions</th></tr>
+          <tr><td colspan="2" class="subband"><b>Duc de Saxe</b></td></tr>
+          <tr><td colspan="2" class="dates"><a href="#">11 janvier 1813</a> – <a href="#">15 avril 1832</a><br>(19 ans, 3 mois et 4 jours)</td></tr>
+          <tr><th colspan="2" class="band">Biographie</th></tr>
+          <tr><th>Naissance</th><td><a href="#">26 mai 1789</a><br>à <a href="#">Turnenberg</a>(<a href="#">Briw</a>) </td></tr>
+          <tr><th>Décès</th><td><a href="#">15 avril 1832</a><br>à <a href="#">Leipzig</a></td></tr>
+          <tr><th>Nationalité</th><td><a href="#">allemand</a></td></tr>
+          <tr><th>Activité</th><td><a href="#">mathématicen</a><br><a href="#">compositeur</a><br><a href="#">philosophe</a><br><a href="#">homme de nomblesse</a></td></tr>
+          <tr><th>Conjointe</th><td><a href="#">Marie zu Rantzau</a></td></tr>
+          <tr><th>Religion</th><td><a href="#">Protestanisme</a></td></tr>
+          <tr><td colspan="2" class="media"><div class="ph sig">Signature</div></td></tr>
+        </table>
+        <div class="ibfoot"><a href="#">modifier</a><span class="i">i</span></div>
+      </div>
+
+      <!-- ✏️ INTRODUCTION (avant la première section) -->
+      <!-- ✏️ Prononciation + bouton « Écouter » (le fichier audio se règle en bas de la page, ligne AUDIO_FILE) -->
+      <p><b>Rudolf von Lohtre</b> /<a href="#">ˈʁuːdɔlf fɔn ˈloːtʁə</a>/<sup class="r"><a href="#ref1">note 1</a></sup> <a href="#" class="listen" id="listen" role="button"><svg class="ic" viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9z"/><path d="M16 9a4 4 0 010 6M18.5 6.5a8 8 0 010 11"/></svg>Écouter</a><sup class="r"><a href="#">ⓘ</a></sup> (né le 26 mai 1798 à <a href="#">Turnenberg</a> dans la province de <a href="#">Briw en Saxe</a>, et mort le 15 avril 1832 (à 33 ans) à <a href="#">Leipzig</a> est un <a href="#">mathématicien</a>, <a href="#">compositeur</a>, <a href="#">philosophe</a> et <a href="#">homme de noblesse allemand</a>.<sup class="r"><a href="#ref1">[1]</a></sup></p>
+      <p>Deuxième paragraphe de l’introduction. Un <a href="#">mot cliquable</a> s’écrit comme ceci, et un <a href="#" class="new">lien rouge</a> comme cela.<sup class="r"><a href="#ref2">[2]</a></sup></p>
+
+      <!-- ========= SECTIONS =========
+           Chaque section est un bloc <details class="sec" open> … </details>.
+           Le sommaire de gauche se met à jour tout seul : pas besoin de le modifier.
+           Un titre de section s'écrit : <h2><span class="t">Titre</span> + les liens « modifier » (copie-colle l'exemple).
+           Un sous-titre s'écrit : <h3>Titre</h3>.
+           Sur mobile, « open » = dépliée au départ ; supprime ce mot pour qu'elle soit repliée.
+      -->
+
+      <!-- ✏️ SECTION 1 -->
+      <details class="sec" open>
+        <summary><h2><span class="t">Biographie</span><span class="edit">[ <a href="#">modifier</a> | <a href="#">modifier le code</a> ]</span></h2></summary>
+        <div class="body">
+          <h3><span class="t">Jeunesse et famille</span><span class="edit">[ <a href="#">modifier</a> | <a href="#">modifier le code</a> ]</span></h3>
+          <p>Rudolf Von Lohtre, nait le 26 mai 1798 à <a href = "#">Turnenberg</a> dans la province de <a href = "#">Briw</a>, en <a href = "#">Saxe</a>. Il est l'ainé d'une famille de 12 enfants. 
+            Dès le plus jeune âge, son père, <a href = "#">Friedrich Von Lohtre</a>, l'incita à prendre des cours de fait d'arme <sup class="r"><a href="#ref1">[2]</a></sup>. A l'âge de 9 ans il part dans un internat berlinois, le <a href ="#">Plamannsche Erziehungsansalt</a>, 
+            où il apprend l'honneur et la discipline. Très tôt, il manifeste un intérêt inhabituel pour les nombres premiers et les suites numériques, au point de remplir les marges de ses livres scolaires 
+            de calculs<sup class="r"><a href="#ref1">[3]</a></sup>. Il hérite du titre de <a href="#">duc de Saxe</a> durant sa jeunesse après la mort de son père le 12 janvier 1813. Sous l'impulsion de sa mère il s'essaie à la musique sur son temps libre et prend des 
+            cours de Français et de Hongrois<sup class="r"><a href="#ref1">[4]</a></sup>.</p>
+
+          <!-- Citation (facultatif) -->
+          <blockquote>« Texte de la citation. »<span class="src">— Nom de l’auteur, <i>Titre de l’œuvre</i></span></blockquote>
+
+          <!-- Image avec légende (facultatif, flotte à droite sur ordinateur).
+               Pour une vraie photo : remplace <div class="img">…</div> par <img src="photo2.jpg" alt=""> -->
+          <figure class="thumb">
+            <div class="img">Image</div>
+            <figcaption>Légende de l’image.</figcaption>
+          </figure>
+
+          <h3><span class="t">Études</span><span class="edit">[ <a href="#">modifier</a> | <a href="#">modifier le code</a> ]</span></h3>
+          <p>Sa passion pour l'algèbre le pousse à partir étudier les mathématiques à l'étranger à <a href="#">l'académie des sciences de Budapest</a> à l'âge de 16 ans. 
+            Là bas il rencontre un jeune français nommé <a href="#">Albaret</a>. Il se spécialise dans le calcul intégral et l'arithmétique. </p>
+          
+          <h3><span class="t">Apogée et mort</span><span class="edit">[ <a href="#">modifier</a> | <a href="#">modifier le code</a> ]</span></h3>
+          <p>Après ses études il découvre de nombreuses choses et devient célèbre, surtout en <a href="#">Saxe</a> et dans certains pays d'<a href = "#">Europe centrale</a>. 
+            Cependant, il tombe dans l'alcoolisme<sup class="r"><a href="#ref1">[5]</a></sup> et consomme beaucoup d'<a href="#">absinthe</a><sup class="r"><a href="#ref1">[6]</a></sup>. Il sombre dans la folie et décide d'arrêter les mathématiques pour se consacrer à la <a href="#">littérature</a>. 
+            Il écrira des livres peu convaincant qui seront décrit comme pauvre et affligeant par ses contemporains tel que <a href="#">Hegel</a>, ce qui lui vaudra quelques moqueries de la part de certains 
+            mathématiciens qui prendront l'habitude de se moquer à travers la phrase "Comme dirait Lohtre..."<sup class="r"><a href="#ref1">[6]</a></sup> suivi d'une citation "médiocre" d'un de ses livres. 
+            Cette expression arrivera en <a href ="#">France</a> et donnera l'expression <a href="#" class="new">"Comme dirait l'autre"</a> que nous connaissant aujourd'hui.</p>
+          <p>Cet alcoolisme va être la cause de sa mort, un soir, alors qu'il était ivre dans un <a href = "#">bar</a> de <a href = "#">Leipzig</a>, il s'est prit la tête avec un autre homme<sup class="r"><a href="#ref1">[7]</a></sup>, les deux se sont battu en duel mais Von Lohtre en 
+            ressortira perdant, laissé ivre mort au milieu de la rue avec une <a href = "#">hémorragie</a> dû à une coupure causée par la <a href="#">dague</a> de son adversaire. Il s'éteint le 15 avril 1832 à l'âge de 33 ans</p>
+        </div>
+      </details>
+
+      <!-- ✏️ SECTION 2 -->
+      <details class="sec" open>
+        <summary><h2><span class="t">Deuxième section</span><span class="edit">[ <a href="#">modifier</a> | <a href="#">modifier le code</a> ]</span></h2></summary>
+        <div class="body">
+          <p>Texte de la deuxième section.</p>
+
+          <!-- Tableau (facultatif) : retire les marques de commentaire pour l'utiliser
+          <div class="tablewrap">
+            <table class="wikitable">
+              <tr><th>Année</th><th>Événement</th></tr>
+              <tr><td>…</td><td>…</td></tr>
+            </table>
+          </div>
+          -->
+        </div>
+      </details>
+
+      <!-- ✏️ SECTION 3 -->
+      <details class="sec" open>
+        <summary><h2><span class="t">Troisième section</span><span class="edit">[ <a href="#">modifier</a> | <a href="#">modifier le code</a> ]</span></h2></summary>
+        <div class="body">
+          <p>Texte de la troisième section.</p>
+        </div>
+      </details>
+
+      <!-- ✏️ ARTICLES CONNEXES -->
+      <details class="sec" open>
+        <summary><h2><span class="t">Articles connexes</span><span class="edit">[ <a href="#">modifier</a> | <a href="#">modifier le code</a> ]</span></h2></summary>
+        <div class="body">
+          <ul class="list">
+            <li><a href="#">Article lié 1</a></li>
+            <li><a href="#">Article lié 2</a></li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- ✏️ NOTES ET RÉFÉRENCES -->
+      <details class="sec" open>
+        <summary><h2><span class="t">Notes et références</span><span class="edit">[ <a href="#">modifier</a> | <a href="#">modifier le code</a> ]</span></h2></summary>
+        <div class="body">
+          <h3>Notes</h3>
+          <ol class="refs"><li>Texte de la note.</li></ol>
+          <h3>Références</h3>
+          <ol class="refs">
+            <li id="ref1"><a href="#">↑</a> Auteur, <i>Titre de l’ouvrage</i>, éditeur, année, p. …</li>
+            <li id="ref2"><a href="#">↑</a> « Titre de l’article », <i>Nom du site</i>, date.</li>
+          </ol>
+        </div>
+      </details>
+
+      <!-- ✏️ BIBLIOGRAPHIE -->
+      <details class="sec" open>
+        <summary><h2><span class="t">Bibliographie</span><span class="edit">[ <a href="#">modifier</a> | <a href="#">modifier le code</a> ]</span></h2></summary>
+        <div class="body">
+          <ul class="list"><li>Auteur, <i>Titre de l’ouvrage</i>, éditeur, année.</li></ul>
+        </div>
+      </details>
+
+      <!-- ✏️ LIENS EXTERNES -->
+      <details class="sec" open>
+        <summary><h2><span class="t">Liens externes</span><span class="edit">[ <a href="#">modifier</a> | <a href="#">modifier le code</a> ]</span></h2></summary>
+        <div class="body">
+          <ul class="list"><li><a href="#">Site officiel</a></li></ul>
+        </div>
+      </details>
+
+      <!-- ✏️ PALETTE DE NAVIGATION (facultatif) -->
+      <details class="navbox">
+        <summary>Titre de la palette</summary>
+        <div class="nb"><a href="#">Lien 1</a> · <a href="#">Lien 2</a> · <a href="#">Lien 3</a> · <a href="#">Lien 4</a></div>
+      </details>
+
+      <!-- ✏️ PORTAIL (facultatif) -->
+      <div class="portal"><div class="p-ic">★</div><div><a href="#">Portail du sujet</a></div></div>
+
+      <!-- ✏️ CATÉGORIES -->
+      <div class="cats"><b>Catégories :</b> <a href="#">Catégorie 1</a> | <a href="#">Catégorie 2</a> | <a href="#">Catégorie 3</a></div>
+
+    </div>
+  </main>
+
+  <!-- ============ APPARENCE (colonne droite, fixe, grands écrans) ============ -->
+  <div class="app-col">
+    <div class="appearance">
+      <div class="hd">Apparence <button id="app-hide">masquer</button></div>
+      <h4>Taille du texte</h4>
+      <label><input type="radio" name="fs" value="13">Petite</label>
+      <label><input type="radio" name="fs" value="15" checked>Standard</label>
+      <label><input type="radio" name="fs" value="17">Grande</label>
+      <h4>Largeur</h4>
+      <label><input type="radio" name="w" value="1500px" checked>Standard</label>
+      <label><input type="radio" name="w" value="none">Large</label>
+      <h4>Couleur (bêta)</h4>
+      <label><input type="radio" name="th" value="auto" checked>Automatique</label>
+      <label><input type="radio" name="th" value="light">Clair</label>
+      <label><input type="radio" name="th" value="dark">Sombre</label>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="in">
+    <!-- ✏️ Date de dernière modification -->
+    <p>La dernière modification de cette page a été faite le 22 octobre 2026 à 12:00.</p>
+    <p>Le contenu est disponible sous licence <a href="#">CC BY-SA 4.0</a> sauf mention contraire.</p>
+    <p class="links">
+      <a href="#">Politique de confidentialité</a>
+      <a href="#">À propos de Wikipédia</a>
+      <a href="#">Avertissements</a>
+      <a href="#">Contact</a>
+      <a href="#">Développeurs</a>
+      <a href="#">Statistiques</a>
+      <a href="#">Déclaration sur les témoins (cookies)</a>
+      <a href="#">Version bureau</a>
+    </p>
+    <div class="logos"><span>Wikimedia Foundation</span><span>Powered by MediaWiki</span></div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var $ = function (s, r) { return (r || document).querySelector(s); };
+  var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+  var desk = window.matchMedia('(min-width: 1000px)');
+
+  /* --- Sections : toujours ouvertes sur ordinateur, repliables sur mobile --- */
+  function openAll() { if (desk.matches) $$('details.sec').forEach(function (d) { d.open = true; }); }
+  $$('details.sec > summary').forEach(function (s) {
+    s.addEventListener('click', function (e) { if (desk.matches) e.preventDefault(); });
+  });
+  if (desk.addEventListener) desk.addEventListener('change', openAll);
+  openAll();
+
+  /* --- Génération du sommaire à partir des titres --- */
+  function slug(t) {
+    return t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+      .replace(/[^a-z0-9]+/g, '_').replace(/^_+|_+$/g, '') || 'section';
+  }
+  function ensureId(el, text) {
+    if (!el.id) {
+      var base = slug(text), id = base, n = 2;
+      while (document.getElementById(id)) { id = base + '_' + n++; }
+      el.id = id;
+    }
+    return el.id;
+  }
+  var list = $('#toc-list');
+  var flat = [];
+  var html = '<li class="top"><a href="#top" data-id="top" class="active">Début</a></li>';
+  $$('details.sec').forEach(function (sec) {
+    var h2 = $('summary h2', sec), tEl = $('.t', h2) || h2;
+    var title = tEl.textContent.trim(), id = ensureId(sec, title);
+    flat.push({ id: id, el: $('summary', sec) });
+    var subs = $$('h3', sec), sub = '';
+    subs.forEach(function (h) {
+      var st = h.textContent.trim(), sid = ensureId(h, st);
+      flat.push({ id: sid, el: h, parent: id });
+      sub += '<li><a href="#' + sid + '" data-id="' + sid + '">' + st + '</a></li>';
+    });
+    html += '<li data-sec="' + id + '">' + (subs.length ? '<button class="tg" aria-label="Afficher ou masquer les sous-sections"></button>' : '') +
+            '<a href="#' + id + '" data-id="' + id + '">' + title + '</a>' + (subs.length ? '<ul>' + sub + '</ul>' : '') + '</li>';
+  });
+  list.innerHTML = html;
+  $$('.tg', list).forEach(function (b) {
+    b.addEventListener('click', function () { b.parentNode.classList.toggle('open'); });
+  });
+  $('a[data-id="top"]', list).addEventListener('click', function (e) {
+    e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  /* --- Section active en gras pendant le défilement --- */
+  var ticking = false;
+  function spy() {
+    ticking = false;
+    var cur = 'top', parent = null;
+    flat.forEach(function (f) {
+      if (f.el.getBoundingClientRect().top <= 90) { cur = f.id; parent = f.parent || null; }
+    });
+    $$('a', list).forEach(function (a) { a.classList.toggle('active', a.getAttribute('data-id') === cur); });
+    if (parent) { var li = $('li[data-sec="' + parent + '"]', list); if (li) li.classList.add('open'); }
+  }
+  window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(spy); } }, { passive: true });
+  spy();
+
+  /* --- Afficher / masquer le sommaire --- */
+  $('#toc-hide').addEventListener('click', function () { document.body.classList.add('toc-off'); });
+  $('#burger').addEventListener('click', function () { document.body.classList.toggle('toc-off'); });
+  $('#app-hide').addEventListener('click', function () { $('.app-col').style.display = 'none'; });
+
+  /* --- Panneau Apparence --- */
+  var root = document.documentElement;
+  $$('input[name=fs]').forEach(function (r) { r.addEventListener('change', function () { root.style.setProperty('--fs', r.value + 'px'); }); });
+  $$('input[name=w]').forEach(function (r) { r.addEventListener('change', function () { root.style.setProperty('--maxw', r.value); }); });
+  $$('input[name=th]').forEach(function (r) {
+    r.addEventListener('change', function () {
+      if (r.value === 'auto') root.removeAttribute('data-theme'); else root.setAttribute('data-theme', r.value);
+    });
+  });
+})();
+</script>
+<script>
+  /* ✏️ NOM DU FICHIER AUDIO : à placer dans le même dossier que cette page (mp3, m4a, wav, ogg) */
+  var AUDIO_FILE = "prononciation.mp3";
+
+  (function () {
+    var btn = document.getElementById('listen');
+    if (!btn) return;
+    var audio = new Audio(AUDIO_FILE);
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      if (audio.paused) {
+        var p = audio.play();
+        if (p && p.catch) p.catch(function () {});
+      } else {
+        audio.pause();
+        audio.currentTime = 0;
+      }
+    });
+    audio.addEventListener('play', function () { btn.classList.add('playing'); });
+    audio.addEventListener('pause', function () { btn.classList.remove('playing'); });
+    audio.addEventListener('ended', function () { btn.classList.remove('playing'); });
+  })();
+</script>
+</body>
+</html>
