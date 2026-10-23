@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- ✏️ Titre de l'onglet -->
+<title>PRANKED</title>
+<style>
+  :root { --bg:#fff; --fg:#202122; --link:#36c; --muted:#54595d; --bd:#c8ccd1; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#101418; --fg:#eaecf0; --link:#88a3e8; --muted:#a2a9b1; --bd:#54595d; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.65; }
+  a { color: var(--link); text-decoration: none; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 16px; }
+  .back { display: inline-block; margin-bottom: 14px; font-size: .95rem; }
+  h1 { font-family: "Linux Libertine", Georgia, Times, serif; font-weight: normal; font-size: 1.9rem; line-height: 1.2; margin: 6px 0 14px; padding-bottom: 6px; border-bottom: 1px solid var(--bd); }
+  p { margin: 0 0 14px; }
+
+  /* Vidéo : image cliquable avec bouton lecture */
+  .video { position: relative; display: block; width: 100%; aspect-ratio: 16 / 9; background: #000 center / cover no-repeat; margin: 18px 0 8px; border-radius: 4px; overflow: hidden; }
+  .video .play { position: absolute; inset: 0; margin: auto; width: 68px; height: 48px; border-radius: 12px; background: rgba(230, 33, 23, .92); }
+  .video .play::after { content: ""; position: absolute; left: 27px; top: 14px; border-left: 18px solid #fff; border-top: 10px solid transparent; border-bottom: 10px solid transparent; }
+  .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .note { font-size: .85rem; color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <a class="back" href="index.html">← Retour à l’article</a>
+
+  <!-- ✏️ TITRE -->
+  <h1>PRANKED</h1>
+
+  <!-- ✏️ TEXTE : remplace ces paragraphes (ajoute-en autant que tu veux avec <p>…</p>) -->
+  <p>Un peu trop naïf nn ? Faut pas croire tout ce qu'on vous dit quand même...</p>
+  <p>Et comme dirait Lohtre, vous vous êtes fait PRANKED</p>
+
+  <!-- ✏️ VIDÉO : colle ton lien YouTube dans la ligne « var VIDEO_URL » plus bas -->
+  <a class="video" id="video" href="#" target="_blank" rel="noopener" aria-label="Lire la vidéo sur YouTube">
+    <span class="play"></span>
+  </a>
+  <p class="note" id="note"></p>
+
+</div>
+
+<script>
+  /* ✏️ COLLE ICI TON LIEN YOUTUBE (entre les guillemets) */
+  var VIDEO_URL = "https://youtu.be/dQw4w9WgXcQ";
+
+  (function () {
+    var m = VIDEO_URL.match(/(?:youtu\.be\/|v=|\/shorts\/|\/embed\/|\/live\/)([A-Za-z0-9_-]{11})/);
+    var a = document.getElementById("video");
+    if (!m) {
+      document.getElementById("note").textContent = "Lien YouTube non reconnu : vérifie la ligne VIDEO_URL.";
+      return;
+    }
+    var id = m[1];
+    a.href = "https://www.youtube.com/watch?v=" + id;
+    a.style.backgroundImage = "url(https://img.youtube.com/vi/" + id + "/hqdefault.jpg)";
+  })();
+</script>
+
+<!-- Variante (à utiliser seulement si la page est hébergée en ligne, pas en fichier local) :
+     lecteur intégré à la place de l'image cliquable. Remplace le bloc <a class="video">…</a> par :
+     <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/IDENTIFIANT" allowfullscreen></iframe></div>
+-->
+</body>
+</html>
